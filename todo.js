@@ -45,4 +45,8 @@ function controllerTasks($scope) {
             if (!task.finish) $scope.tasks.push(task);
         });
     };
+
+    $scope.deleteAll = function () {
+        $scope.tasks = [];
+    };
 }
