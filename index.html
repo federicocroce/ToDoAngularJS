@@ -15,8 +15,7 @@
 <body ng-app>
     <h2>List of task</h2>
     <div ng-controller="controllerTasks">
-        <span>{{remaining()}} de {{tasks.length}}</span> [ <a class="text-danger" href="" ng-click="deleteFinish()">Deltete Select</a>]
-        [ <a class="text-danger" href="" ng-click="deleteAll()">Deltete All</a>]
+        <span>{{remaining()}} de {{tasks.length}}</span> [ <a class="text-danger" href="" ng-click="deleteFinish()">Delete Select</a>] [ <a class="text-danger" href="" ng-click="deleteAll()">Delete All</a>]
         <ul class="unstyled">
             <li ng-repeat="task in tasks">
                 <input type="checkbox" ng-model="task.finish">
