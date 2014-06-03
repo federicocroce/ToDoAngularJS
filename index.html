@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Controllers</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="todo.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="todo.js"></script>
+</head>
+
+<body ng-app>
+    <h2>List of task</h2>
+    <div ng-controller="controllerTasks">
+        <span>{{remaining()}} de {{tasks.length}}</span> [ <a class="text-danger" href="" ng-click="deleteFinish()">Deltete</a>]
+        <ul class="unstyled">
+            <li ng-repeat="task in tasks">
+                <input type="checkbox" ng-model="task.finish">
+                <span class="finish-{{task.finish}}">{{task.name}}</span>
+            </li>
+        </ul>
+        <form ng-submit="addTask()">
+            <input class="invaldTask-{{invalidTask}}" type="texto" size="30" placeholder="Add Task" ng-model="newTask" ng-change="newTaskValue()">
+            <button class="btn btn-primary" type="submit">Add</button>
+        </form>
+        <span class="text-danger" ng-show="invalidTask">Invalid task. Add Text.</span>
+    </div>
+</body>
+
+</html>
